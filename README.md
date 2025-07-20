@@ -8,6 +8,7 @@ A react based shop front end, with all the features expected from a shop site
 - JavaScript
 - HTML
 - CSS
+- Fake Store API
 ## Contributing
 
 This project is for educational purposes. Feel free to fork it and modify it for your own use. Contributions and suggestions are welcome!

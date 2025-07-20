@@ -1,0 +1,131 @@
+/* Navigation.module.css */
+
+.navLinksContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border: 2px solid transparent;
+  overflow: hidden;
+}
+
+.navItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.navItem:hover::before {
+  left: 100%;
+}
+
+.navItem:hover {
+  color: #6366f1;
+  background: rgba(99, 102, 241, 0.05);
+  border-color: rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+}
+
+.navItem:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+}
+
+.navItem img {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+.navItem:hover img {
+  filter: brightness(0) invert(1) opacity(1);
+  transform: scale(1.1);
+}
+
+.navItem span {
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.025em;
+}
+
+/* Active state - you can add this class dynamically based on current route */
+.navItem.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-color: #6366f1;
+  box-shadow: 0 6px 25px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+}
+
+.navItem.active img {
+  filter: brightness(0) invert(1) opacity(1);
+  transform: scale(1.05);
+}
+
+/* Alternative glass-like effect */
+.navItem.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navItem.glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .navLinksContainer {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .navItem {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    gap: 0.4rem;
+  }
+  
+  .navItem img {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .navItem span {
+    display: none; /* Hide text on very small screens, show only icons */
+  }
+}
+
+@media (max-width: 480px) {
+  .navLinksContainer {
+    gap: 0.5rem;
+  }
+  
+  .navItem {
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+}

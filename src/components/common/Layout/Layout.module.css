@@ -1,0 +1,182 @@
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: blueviolet;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --- Logo --- */
+.logoContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.2s;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+.logoContainer:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s;
+}
+
+.logoContainer:hover .logoIcon {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(246deg) brightness(104%) contrast(97%);
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* --- Cart Button --- */
+.cartButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  position: relative;
+  background: transparent;
+}
+
+.cartButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cartIcon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.2s;
+}
+
+.cartButton:hover .cartIcon {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(246deg) brightness(104%) contrast(97%);
+}
+
+.cartText {
+  font-weight: 500;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  min-width: 20px;
+}
+
+/* --- Navigation --- */
+.nav {
+  background-color: blueviolet;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --- Main Content --- */
+.main {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 2rem 0;
+}
+
+.mainContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footerSection h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.footerSection p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.disclaimer {
+  color: #999;
+  font-style: italic;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .navContent {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .cartButton {
+    padding: 0.75rem 1rem;
+  }
+}

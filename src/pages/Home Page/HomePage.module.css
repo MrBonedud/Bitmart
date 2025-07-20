@@ -1,0 +1,484 @@
+/* Hero Section */
+.Hero {
+  background: 
+    linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    url('/hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.Hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.Hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.Hero p:last-of-type {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 2.5rem;
+}
+
+/* Button Styling */
+.button {
+  display: inline-block;
+  background-color: #ff6b6b;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.button:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Hero {
+    padding: 60px 20px;
+    min-height: 50vh;
+  }
+  
+  .Hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .Hero p {
+    font-size: 1.1rem;
+  }
+  
+  .button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .Hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Featured Products Section */
+.featuredProducts {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featuredProducts h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+/* Slider Styles */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  padding-bottom: 4rem; /* Add space for indicators */
+}
+
+.prevButton,
+.nextButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.prevButton:hover,
+.nextButton:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.prevButton:active,
+.nextButton:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.prevButton:disabled,
+.nextButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+/* Animation container for the product display */
+.productDisplay {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-height: 350px;
+  max-width: 400px;
+  overflow: hidden; /* Hide sliding products outside the container */
+  position: relative;
+}
+
+/* Animated slider track that holds all products */
+.sliderTrack {
+  display: flex;
+  width: 400%; /* Width = number of products × 100% (4 products = 400%) */
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform; /* Optimize for animations */
+}
+
+/* Individual product in the slider track */
+.sliderTrack .productCard {
+  width: 25%; /* 100% ÷ number of products (100% ÷ 4 = 25%) */
+  max-width: none;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 0 0.5rem; /* Small gap between slides */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.slider .productCard {
+  width: 100%;
+  max-width: 350px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.slider .productCard:hover,
+.sliderTrack .productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.slider .productCard img,
+.sliderTrack .productCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.slider .productCard h3,
+.sliderTrack .productCard h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  height: 2.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.slider .productCard p,
+.sliderTrack .productCard p {
+  font-size: 1.3rem;
+  color: #667eea;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Direction-based animations */
+.slideLeft {
+  animation: slideInFromRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.slideRight {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade animation for auto-advance */
+.fadeTransition {
+  animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Product Indicators */
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.indicator,
+.indicatorActive {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: all 0.3s ease;
+  color: #ccc;
+  line-height: 1;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator:hover {
+  color: #999;
+  transform: scale(1.2);
+}
+
+.indicatorActive {
+  color: #667eea;
+  transform: scale(1.3);
+}
+
+.indicatorActive:hover {
+  color: #5a67d8;
+}
+
+/* Old Grid Styles (keeping for backward compatibility) */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.productCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.productCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.productCard h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  height: 2.8em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.productCard p {
+  font-size: 1.3rem;
+  color: #667eea;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Slider Responsive Design */
+@media (max-width: 768px) {
+  .featuredProducts {
+    padding: 60px 20px;
+  }
+  
+  .featuredProducts h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .slider {
+    gap: 1rem;
+    padding: 0.5rem;
+    padding-bottom: 3rem;
+  }
+  
+  .prevButton,
+  .nextButton {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .productDisplay {
+    min-height: 320px;
+  }
+  
+  .slider .productCard {
+    padding: 1.2rem;
+  }
+  
+  .sliderTrack .productCard {
+    padding: 1.2rem;
+    margin: 0 0.25rem;
+  }
+  
+  .indicators {
+    gap: 0.4rem;
+    margin-top: 1rem;
+    bottom: -40px;
+  }
+  
+  .indicator,
+  .indicatorActive {
+    font-size: 1.3rem;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+  
+  .prevButton,
+  .nextButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .productDisplay {
+    order: 2;
+    min-height: 300px;
+    max-width: 100%;
+  }
+  
+  .prevButton {
+    order: 1;
+  }
+  
+  .nextButton {
+    order: 3;
+  }
+  
+  .slider .productCard img,
+  .sliderTrack .productCard img {
+    height: 180px;
+  }
+  
+  .indicators {
+    gap: 0.3rem;
+    bottom: -30px;
+  }
+  
+  .indicator,
+  .indicatorActive {
+    font-size: 1.2rem;
+    width: 16px;
+    height: 16px;
+  }
+}

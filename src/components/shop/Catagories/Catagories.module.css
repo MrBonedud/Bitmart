@@ -1,0 +1,126 @@
+.sidebar {
+  width: 280px;
+  min-width: 280px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-right: none;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin-bottom: 30px;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.active {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+  transition: all 0.3s ease;
+  transform: translateX(8px);
+  border: 2px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.active:hover {
+  background: white;
+  transform: translateX(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+  margin-right: 15px;
+  font-size: 20px;
+  width: 24px;
+  text-align: center;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+    position: static;
+    padding: 20px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .item, .active {
+    padding: 12px 16px;
+  }
+  
+  .name {
+    font-size: 14px;
+  }
+  
+  .icon {
+    font-size: 18px;
+    margin-right: 12px;
+  }
+}

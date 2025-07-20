@@ -9,7 +9,6 @@ function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoAdvancing, setIsAutoAdvancing] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
-  // Add this state to track animation direction
   const [animationClass, setAnimationClass] = useState('');
   const [lastInteractionType, setLastInteractionType] = useState('auto'); // 'auto', 'next', 'prev'
 

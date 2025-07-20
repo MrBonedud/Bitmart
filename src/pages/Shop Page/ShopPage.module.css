@@ -77,7 +77,6 @@
   border: 2px dashed #ddd;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .shopContainer {
     flex-direction: column;

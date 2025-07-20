@@ -70,7 +70,7 @@
   letter-spacing: 0.025em;
 }
 
-/* Active state - you can add this class dynamically based on current route */
+/* Active state */
 .navItem.active {
   color: #ffffff;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);

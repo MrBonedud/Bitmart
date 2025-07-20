@@ -119,7 +119,6 @@
   transform: translateY(0);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .cartItem {
     flex-direction: column;

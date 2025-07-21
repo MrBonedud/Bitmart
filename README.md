@@ -1,3 +1,6 @@
+
+<img width="1366" height="768" alt="Screenshot 2025-07-20 192200" src="https://github.com/user-attachments/assets/4501d9f2-a633-4c0b-8292-0cce1921fd00" />
+
 # Bitmart
 
 A react based shop front end, with all the features expected from a shop site
